@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslationLoaderService } from '../service/translation-loader.service';
-import { locale as english } from '../shared/i18n/en';
-import { locale as french } from '../shared/i18n/fr';
+// import { locale as english } from '../shared/i18n/en';
+// import { locale as french } from '../shared/i18n/fr';
 import { projectsEn} from '../api/projectsEn';
 import { projectsFr} from '../api/projectsFr';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,17 +14,17 @@ import { TranslateService } from '@ngx-translate/core';
 export class ProjectComponent {
   projects:any[]=projectsEn;
   venobox: any;
-  constructor(private _translationLoaderService: TranslationLoaderService,private _translateService: TranslateService) {
-    this._translationLoaderService.loadTranslations(english, french);
-    this._translateService.onLangChange.subscribe(()=>{
-      if(this._translateService.currentLang=="en"){
-        this.projects=projectsEn;
-      }
-      else{
-        this.projects=projectsFr;
-      }
-    });
-  }
+  // constructor(private _translationLoaderService: TranslationLoaderService,private _translateService: TranslateService) {
+  //   this._translationLoaderService.loadTranslations();
+  //   this._translateService.onLangChange.subscribe(()=>{
+  //     if(this._translateService.currentLang=="en"){
+  //       this.projects=projectsEn;
+  //     }
+  //     else{
+  //       this.projects=projectsFr;
+  //     }
+  //   });
+  // }
 
   ngOnInit(): void {
     
